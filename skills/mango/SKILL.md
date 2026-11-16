@@ -1,6 +1,6 @@
 ---
 name: mango
-description: Professional modern frontend design and engineering skill. Use when building landing pages, marketing sites, product UIs, dashboards, or web apps that must look and feel high-budget and production-quality rather than AI-generated. Emphasizes domain-native art direction at a multi-team craft level, anti-slop discipline, Tailwind + modern component systems, measured typography and spacing, ambitious but purposeful interaction, and progressive hardening when the work becomes application-like. Triggers on requests for polished UI, "make it not look AI", custom design systems, real-estate/logistics/SaaS/product sites, or any brief that needs a senior product designer + frontend engineer mindset.
+description: Professional modern frontend design and engineering skill. Use when building landing pages, marketing sites, product UIs, dashboards, or web apps that must look and feel high-budget and production-quality rather than AI-generated. Emphasizes domain-native art direction at a multi-team craft level, anti-slop discipline, modern component thinking, measured typography and spacing, ambitious but purposeful interaction, and progressive hardening when the work becomes application-like. Triggers on requests for polished UI, "make it not look AI", custom design systems, real-estate/logistics/SaaS/product sites, or any brief that needs a senior product designer + frontend engineer mindset.
 ---
 
 # mango — Professional Frontend Design & Engineering
@@ -20,7 +20,7 @@ The skill supplies **method + discipline**. It never supplies a visual template.
 
 3. **Custom over generic.** Prefer the user’s existing design system, brand assets, or provided template. If none exists, derive one from the domain at a high craft level instead of reaching for the nearest popular look.
 
-4. **Components + Tailwind as tools, not identity.** Use Tailwind (or the project’s utility system) and modern component patterns (shadcn-style primitives, Radix, Base UI, etc.) for speed and consistency. Never let the component library dictate the visual voice.
+4. **Implementation tools, not identity.** Styling approach and component primitives are implementation details. Respect the user’s preferred stack or existing codebase (Tailwind, CSS Modules, vanilla, UnoCSS, styled-system, etc.). Never let a utility framework or component library dictate the visual voice.
 
 5. **Progressive depth.** Marketing/landing work can stay relatively light. When the product becomes a web app (auth, data, state, permissions, money, PII), activate security, state UX, observability, and hardening thinking automatically.
 
@@ -56,6 +56,7 @@ If the result looks correct for the domain but also looks cheap, safe, or under-
 - Read the domain, product, existing site/brand, and must-have content.
 - If the user provides a template, design system, Figma, or reference site → treat it as source of truth and extend it at high quality, do not replace it with something flatter.
 - If none exists, derive from the domain (what physical or digital artifact does this industry already produce?) and set an ambitious but appropriate craft target.
+- Note any stated stack or styling preference and honor it.
 
 ### 1. Direction
 Produce the Direction card. If the constraints still sound like “premium dark gold” or any previous mango/AURELIA output, stop and re-derive from the actual domain.  
@@ -65,7 +66,7 @@ Also ask: where will the budget and attention go? (hero moment, key interaction,
 - Color: OKLCH-aware, tinted neutrals, one clear accent. Avoid pure black/white and rainbow gradients.
 - Type: three roles maximum. Prefer fonts with real optical size or width axes when the domain needs presence. Measure fit.
 - Spacing & density: consistent rhythm. Prefer professional, intentional density over both cramped and overly airy defaults.
-- Components: build or extend a small, coherent set. Prefer composition. Use Tailwind (or project equivalent) for implementation speed, not as the design language itself.
+- Components: build or extend a small, coherent set. Prefer composition. Use whatever styling system the project or user prefers for implementation speed — the system is not the design language.
 
 ### 3. Structure & hierarchy
 - Information architecture first.
@@ -108,12 +109,13 @@ Automatically raise standards:
 - Technical: no console errors, no obvious overflow, sensible network.
 - Domain + craft: would a professional in this industry recognize the page as belonging to their world *and* respect the level of execution?
 
-## Tailwind & component guidance
+## Implementation guidance (flexible)
 
-- Tailwind is an implementation tool. Use it for consistent spacing, type scale, color tokens, and responsive behavior.
-- Prefer semantic tokens (`bg-surface`, `text-muted`, `border-subtle`) over raw utility soup when the project will live longer than a week.
-- Component libraries (shadcn/ui, Radix, Base UI, Ark, etc.) are excellent for accessibility and behavior. Restyle them to the Direction card; do not accept their default look as the brand.
-- Avoid installing a full “design system” package that fights the custom direction. Compose small primitives instead.
+- Honor the user’s stated preference or the project’s existing approach (Tailwind, CSS Modules, vanilla CSS, UnoCSS, etc.). Do not force a stack.
+- When a utility system is in use, prefer semantic tokens over raw utility noise on longer-lived work.
+- Accessible behavior primitives (Radix, Base UI, Ark, native elements, etc.) are valuable when needed. Restyle them to the Direction card; never accept a library’s default look as the brand.
+- Avoid installing a full design-system package that fights the custom direction. Compose small primitives instead.
+- If the user has not expressed a preference and the project has no existing system, choose the lightest approach that still supports the craft level required.
 
 ## Hard stops
 
@@ -123,11 +125,12 @@ Automatically raise standards:
 - Do not invent a new component library when the project already has one.
 - Do not ignore empty/error/loading states on data-driven views.
 - Do not ship security-sensitive features without explicit boundary thinking.
+- Do not override an explicit user stack or styling preference.
 
 ## Resources (inside this skill)
 - `references/anti-slop.md` — tells, subtraction order, industry recognition test
 - `references/art-direction.md` — domain-native direction method + examples
-- `references/components-and-tailwind.md` — practical component & Tailwind guidance
+- `references/components-and-tailwind.md` — practical component & implementation guidance
 - `references/verification.md` — what “done” actually requires
 
 When deeper specialization is needed (complex animation, heavy security review, full design-system extraction, etc.), the modular companion skills can be activated. This skill remains the primary decision-maker for visual and structural quality.
