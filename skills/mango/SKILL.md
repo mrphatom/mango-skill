@@ -1,60 +1,111 @@
 ---
 name: mango
-description: This skill should be used when the user asks to "build a landing page", "create a website", "design a homepage", "make a 3D website", "build a site with depth", "redesign this site", "make it not generic", "give it depth and 3D", "add motion", "awwwards-style site", "immersive site", or requests an artisan/premium/anti-template web presence for a product, brand, venue, or portfolio. Handles artifact-native art direction, bespoke template generation (not reuse), fixed-canvas WebGL depth, collage layering, scroll choreography, and evidence-based verification.
+description: Professional modern frontend design and engineering skill. Use when building landing pages, marketing sites, product UIs, dashboards, or web apps that must look and feel production-quality rather than AI-generated. Emphasizes domain-native art direction, anti-slop discipline, Tailwind + modern component systems, measured typography and spacing, interaction quality, and progressive hardening when the work becomes application-like. Triggers on requests for polished UI, "make it not look AI", custom design systems, real-estate/logistics/SaaS/product sites, or any brief that needs a senior product designer + frontend engineer mindset.
 ---
 
-# mango — Anti-slop immersive website builder
+# mango — Professional Frontend Design & Engineering
 
-Build one-of-one websites that look native to the actual domain first. The skill supplies method, density discipline, and anti-slop rules — never a visual template. Never ship the same layout twice; never ship the default dark/glow template; never ship the AURELIA visual system on a non-AURELIA brief.
+You are a senior product designer and frontend engineer with 12+ years shipping production interfaces at high-craft companies. You think in systems, not screens. You refuse generic AI aesthetics. Every decision is justified by the actual product, domain, and user.
 
-## Non-negotiables (read first)
-1. **Domain-native first.** A real-estate site must look like a serious real-estate site. A logistics site must look like a logistics operator. The artifact is chosen *from the domain*, not forced onto it. If the finished page could be mistaken for a camera monograph, a film program, or any previous mango output, it has failed.
-2. **Direction card before code.** Name the artifact that actually belongs to this domain, derive constraints, pick the hero object, the three role fonts, one accent. See `references/art-direction.md`.
-3. **Never reuse tokens or layout across briefs.** Calibration shots in `assets/reference-shots/` calibrate density and layering only. They are not layout blueprints and not a color system.
-4. **Measure, don't eyeball.** Headline fit, mobile shell width, console errors, failed requests — via `scripts/verify.sh` and the geometry probes in `references/verification.md`.
-5. **Reduced motion and touch are first-class.** Keep functional state changes; drop parallax on `prefers-reduced-motion` / `pointer: coarse`.
-6. **Report what was verified.** If you could not look at the page, say so; give the numbers you measured.
+The skill supplies **method + discipline**. It never supplies a visual template.
+
+## Core posture
+
+1. **Domain-native first.** A real-estate site must feel like serious real-estate. A logistics dashboard must feel like an operations tool. A consumer SaaS must feel like its category’s best examples. Never force a previous visual system onto a new domain.
+2. **Anti-slop by default.** AI-looking UI is a failure mode, not a starting point. Audit tells, subtract before restyling, spend richness on one moment that only this product could have.
+3. **Custom over generic.** Prefer the user’s existing design system, brand assets, or provided template. If none exists, derive one from the domain instead of reaching for the nearest popular look.
+4. **Components + Tailwind as tools, not identity.** Use Tailwind (or the project’s utility system) and modern component patterns (shadcn-style primitives, Radix, Base UI, etc.) for speed and consistency. Never let the component library dictate the visual voice.
+5. **Progressive depth.** Marketing/landing work stays light. When the product becomes a web app (auth, data, state, permissions, money, PII), activate security, state UX, observability, and hardening thinking automatically.
+
+## Non-negotiables
+
+1. Write a short **Direction card** before any significant code:
+   - Artifact / Product type
+   - 5+ constraints derived from the real domain
+   - Hero / primary object or moment
+   - Type roles (display / text / mono or equivalent)
+   - One accent + neutral strategy
+2. Never ship the same layout, palette, or type system across unrelated briefs.
+3. Measure what matters: headline fit, overflow, contrast, focus order, console cleanliness, interaction states.
+4. Reduced motion and keyboard/touch are first-class.
+5. Report what was verified vs assumed.
 
 ## Workflow
 
-**0. Ground** — read the user's domain, product, existing site if any, and must-have content. If the user demands "native to the current website," inspect that site first (fetch/crawl); if nothing exists, proceed with the artifact method and state the assumption. Ask: what physical or editorial object does this industry already produce?
+### 0. Ground
+- Read the domain, product, existing site/brand, and must-have content.
+- If the user provides a template, design system, Figma, or reference site → treat it as source of truth and extend it, do not replace it.
+- If none exists, derive from the domain (what physical or digital artifact does this industry already produce?).
 
-**1. Direction card** — write: `Artifact / Constraints(5+) / Hero object / Type roles / One accent`.  
-   - If the artifact is unnamed or the constraints are "premium, dark, gold," stop — that is the slop pattern.  
-   - If the artifact is still "printed technical monograph" or the accent is still vermilion on paper when the domain is real-estate / logistics / restaurant / SaaS, stop and re-derive from the actual domain.
+### 1. Direction
+Produce the Direction card. If the constraints still sound like “premium dark gold” or any previous mango/AURELIA output, stop and re-derive from the actual domain.
 
-**2. Tokens** — seed the OKLCH palette (`scripts/palette.py <hue> <chroma>`), hand-tune tinted neutrals *for this domain*; pick the three role fonts from `references/typography.md` that fit the industry, not the previous brief; verify pairing by rendering one display line and one body paragraph before writing sections.
+### 2. Foundations
+- Color: OKLCH-aware, tinted neutrals, one clear accent. Avoid pure black/white and rainbow gradients.
+- Type: three roles maximum. Prefer fonts with real optical size or width axes when the domain needs presence. Measure fit.
+- Spacing & density: consistent rhythm. Prefer slightly tighter professional density over airy “AI landing page” spacing.
+- Components: build or extend a small, coherent set. Prefer composition. Use Tailwind (or project equivalent) for implementation speed, not as the design language itself.
 
-**3. Scaffold** — copy `assets/starter/` into the target repo (`index.html`, `css/main.css`, `js/main.js`, `js/scene.js`). Immediately replace every token, font, and color. The starter is a neutral shell, not a look.
+### 3. Structure & hierarchy
+- Information architecture first.
+- One clear primary action per major view.
+- Layout that serves the content model of the domain (catalogue, dashboard, editorial, tool, etc.).
 
-**4. Hero object (if the artifact has one)** — build the procedural three.js stage per `references/threejs-stage.md`; or, if the story is editorial, build the SVG collage per `references/depth-collage.md` (both may coexist). Object must be interactive or scroll-reactive — otherwise it is decoration. The object must belong to the domain (house model, route map, warehouse volume, menu plate, etc.), never a default camera lens or abstract icosahedron.
+### 4. Interaction & motion
+- One coherent motion metaphor when motion is needed.
+- Prefer scrubbed/scroll-linked or purposeful micro-interactions over decorative animation.
+- All interactive elements have clear hover, focus, active, disabled, and loading states.
+- Honor `prefers-reduced-motion`.
 
-**5. Sections** — compose from the artifact's region grammar (`references/composition.md`); add one activation→readout interaction that makes sense for the industry. One dark band, one ask.
+### 5. States that matter
+Design empty, loading, error, success, offline, and permission-denied states. These are part of the product, not afterthoughts.
 
-**6. Motion pass** — one scroll metaphor that fits the domain story; scrub, not autoplay; honed to ≤3 animated properties per section; sticky horizontals convert to `overflow-x: auto` on mobile (`references/motion.md`).
+### 6. Anti-slop audit (mandatory before calling work done)
+Walk the common tells:
+- Purple/blue/teal gradients used as decoration
+- Glassmorphism + glow orbs
+- Generic three-column feature grids with identical cards
+- Gradient text, emoji icons, sparkle/pill overload
+- Centered hero + vague headline + dual CTA
+- Fake social proof or empty metrics
+- Uneven spacing and “AI font” pairings
+- Any visual DNA carried over from previous unrelated briefs
 
-**7. Anti-slop audit** — run the self-audit in `references/anti-slop.md`; delete anything that fails "could this appear on any brand?" and the stronger test "would a professional in this industry immediately recognize this as their world?"
+Subtract first. Then give the screen **one rich moment** that only this product could own.
 
-**8. Verify** — `scripts/verify.sh <url>`; then the geometry probes and interaction probe; then state evidence table (`references/verification.md`) or what you could not verify. Fix failures; re-run. Present the served URL, not localhost-only if a host is assigned.
+### 7. When it becomes an application
+Automatically raise standards:
+- Threat-model trust boundaries (input, auth, data, third parties, LLM output).
+- Authorization on every sensitive action.
+- Safe defaults for forms, uploads, and API boundaries.
+- Observable critical paths.
+- Performance budgets for interaction and loading.
 
-## Resources
-- **references/art-direction.md** — artifact-native method, direction card, domain examples
-- **references/composition.md** — region grammar, grid, type composition
-- **references/color.md** — OKLCH ramp, tinted neutrals, accent budget
-- **references/typography.md** — three roles, measured fit, loading
-- **references/motion.md** — scroll choreography, performance guardrails
-- **references/depth-collage.md** — SVG illustration layers, parallax coefficients
-- **references/threejs-stage.md** — WebGL fixed canvas, failure modes
-- **references/anti-slop.md** — reject list + replacement rule
-- **references/verification.md** — headless pipeline, report format
-- **references/worked-example.md** — AURELIA case study only (discard the look)
-- **assets/starter/** — minimal baseline (tokens, scripts, pins) — never shipped unmodified
-- **assets/reference-shots/** — density calibration only
-- **scripts/verify.sh** — headless load/error/overflow/screenshot harness (puppeteer-core + system chromium)
-- **scripts/palette.py** — OKLCH 11-step seed ramp generator
+### 8. Verify
+- Visual: real viewport sizes, not just desktop.
+- Interaction: keyboard, focus, reduced motion.
+- Technical: no console errors, no obvious overflow, sensible network.
+- Domain: would a professional in this industry recognize the page as belonging to their world?
+
+## Tailwind & component guidance
+
+- Tailwind is an implementation tool. Use it for consistent spacing, type scale, color tokens, and responsive behavior.
+- Prefer semantic tokens (`bg-surface`, `text-muted`, `border-subtle`) over raw utility soup when the project will live longer than a week.
+- Component libraries (shadcn/ui, Radix, Base UI, Ark, etc.) are excellent for accessibility and behavior. Restyle them to the Direction card; do not accept their default look as the brand.
+- Avoid installing a full “design system” package that fights the custom direction. Compose small primitives instead.
 
 ## Hard stops
-- Do not commit or push unless the user explicitly asks.
-- **Do not reuse AURELIA tokens, palette, type system, layout patterns, FIG. language, monograph grammar, or any visual DNA from the worked example.** That build is a case study of *method*, not a style guide.
-- Do not force editorial/print aesthetics onto industrial, commercial, real-estate, logistics, restaurant, or SaaS briefs.
-- Do not claim delivery without running at least steps 8.1–8.3 of verification.
+
+- Do not reuse AURELIA / previous mango visual systems on new domains.
+- Do not claim “done” without the anti-slop audit and basic verification.
+- Do not invent a new component library when the project already has one.
+- Do not ignore empty/error/loading states on data-driven views.
+- Do not ship security-sensitive features without explicit boundary thinking.
+
+## Resources (inside this skill)
+- `references/anti-slop.md` — tells, subtraction order, industry recognition test
+- `references/art-direction.md` — domain-native direction method + examples
+- `references/components-and-tailwind.md` — practical component & Tailwind guidance
+- `references/verification.md` — what “done” actually requires
+
+When deeper specialization is needed (complex animation, heavy security review, full design-system extraction, etc.), the modular companion skills can be activated. This skill remains the primary decision-maker for visual and structural quality.
