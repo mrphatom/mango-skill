@@ -36,3 +36,15 @@ Within the domain constraints, aim for:
 - Overall coherence that suggests aligned specialists
 
 Domain-native is not an excuse for low ambition.
+
+## Reference mixing (optional accelerator)
+When the first pass still feels safe or under-designed, deliberately collide the product with a strong graphic or cultural reference, then resolve the collision into one coherent direction. The reference is a catalyst, not a costume.
+
+Examples of the *method*:
+- Flat product + material / glass language → depth
+- Unmemorable layout + Swiss poster discipline → hierarchy
+- Cluttered interface + bold typographic maximalism → one dominant type system
+- Empty screen + tactile / texture language → presence
+- Predictable SaaS + a specific era or cultural graphic system → character
+
+After mixing, re-run the industry recognition test. The result must still belong to the domain.
