@@ -1,15 +1,15 @@
-/* BASELINE — smooth scroll + progress + toast. Extend per references/motion.md */
+/*
+  DISPOSABLE SCAFFOLD ONLY.
+
+  Do not treat this as a motion system.
+  Add Lenis, GSAP, ScrollTrigger, or any other library
+  only when the Direction card and references/motion-and-interaction.md
+  justify it for the current artifact.
+
+  Reduced-motion preference must always be respected.
+*/
+
 (() => {
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (typeof window.Lenis !== 'undefined' && !prefersReduced) {
-    const lenis = new Lenis({ duration: 1.1, smoothWheel: true });
-    if (window.gsap && window.ScrollTrigger) {
-      gsap.registerPlugin(ScrollTrigger);
-      lenis.on('scroll', ScrollTrigger.update);
-      gsap.ticker.add((t) => lenis.raf(t * 1000));
-      gsap.ticker.lagSmoothing(0);
-    }
-  }
-  const toast = document.getElementById('toast');
-  window.showToast = (msg) => { if (!toast) return; toast.textContent = msg; toast.classList.add('is-visible'); setTimeout(() => toast.classList.remove('is-visible'), 4000); };
+  // Placeholder for any global utilities the current build actually needs.
+  // Keep this file empty or minimal unless the brief requires shared behavior.
 })();
