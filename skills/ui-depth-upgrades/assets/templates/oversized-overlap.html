@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Move 1 — Oversized subject + headline overlap</title>
+<style>
+  :root {
+    --bg: #0f1419;
+    --ink: #f5f0e8;
+    --muted: #a89f91;
+    --accent: #c4a574;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem 4rem;
+  }
+  h1 { font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.5rem; }
+  .toggle {
+    display: flex; gap: 0.5rem; margin-bottom: 2rem;
+  }
+  .toggle button {
+    background: transparent; border: 1px solid var(--muted); color: var(--ink);
+    padding: 0.4rem 1rem; border-radius: 999px; cursor: pointer; font-size: 0.85rem;
+  }
+  .toggle button.active { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .stage {
+    width: min(390px, 100%);
+    aspect-ratio: 9/16;
+    border-radius: 28px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 24px 48px rgba(0,0,0,0.45);
+    background: #1a222c;
+  }
+  /* BEFORE */
+  .before { display: none; flex-direction: column; height: 100%; padding: 1.5rem; }
+  .stage.show-before .before { display: flex; }
+  .stage.show-before .after { display: none; }
+  .before .photo {
+    width: 100%; aspect-ratio: 1; border-radius: 16px; background: #2a3540;
+    display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 0.8rem;
+  }
+  .before h2 { font-size: 1.25rem; margin: 1.25rem 0 0.35rem; text-align: center; font-weight: 600; }
+  .before .meta { text-align: center; color: var(--muted); font-size: 0.85rem; margin-bottom: 1.5rem; }
+  .before .row { display: flex; justify-content: space-between; padding: 0.75rem 0; border-top: 1px solid #2a3540; font-size: 0.9rem; }
+  /* AFTER */
+  .after { position: relative; height: 100%; overflow: hidden; }
+  .stage:not(.show-before) .after { display: block; }
+  .after .subject {
+    position: absolute; right: -18%; top: 8%; width: 78%; z-index: 2;
+    filter: drop-shadow(0 18px 28px rgba(0,0,0,0.45));
+  }
+  .after .subject img {
+    width: 100%; display: block;
+    /* placeholder plant silhouette via CSS shape */
+    background: linear-gradient(160deg, #3d6b4f 0%, #1e3d2a 60%, #0f2418 100%);
+    border-radius: 40% 60% 55% 45% / 55% 40% 60% 45%;
+    aspect-ratio: 3/4;
+    mask-image: radial-gradient(ellipse 80% 90% at 50% 45%, black 55%, transparent 72%);
+  }
+  .after .content {
+    position: absolute; left: 0; right: 0; bottom: 0; top: 0;
+    padding: 2rem 1.4rem 1.6rem; display: flex; flex-direction: column; z-index: 3;
+  }
+  .after .eyebrow { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
+  .after h2 {
+    font-family: var(--serif); font-size: 2.6rem; line-height: 0.95; font-weight: 600;
+    letter-spacing: -0.02em; max-width: 11ch; margin-bottom: auto;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.55);
+  }
+  .after .stats {
+    background: rgba(15,20,25,0.72); backdrop-filter: blur(12px);
+    border-radius: 18px; padding: 1rem 1.1rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
+  }
+  .after .stat span { display: block; font-size: 0.7rem; color: var(--muted); margin-bottom: 0.15rem; }
+  .after .stat strong { font-size: 1.05rem; }
+  .note { margin-top: 1.5rem; max-width: 390px; font-size: 0.8rem; color: var(--muted); line-height: 1.45; }
+</style>
+</head>
+<body>
+  <h1>Move 1 · Oversized subject + headline overlap</h1>
+  <div class="toggle">
+    <button type="button" id="btn-before">Before</button>
+    <button type="button" id="btn-after" class="active">After</button>
+  </div>
+  <div class="stage" id="stage">
+    <div class="before">
+      <div class="photo">[ plant photo ]</div>
+      <h2>Fiddle-leaf fig</h2>
+      <p class="meta">Ficus lyrata · Indoor</p>
+      <div class="row"><span>Water</span><span>Every 7–10 days</span></div>
+      <div class="row"><span>Light</span><span>Bright indirect</span></div>
+      <div class="row"><span>Humidity</span><span>40–60%</span></div>
+    </div>
+    <div class="after">
+      <div class="subject"><div class="img-placeholder"></div></div>
+      <div class="content">
+        <p class="eyebrow">Indoor · Tropical</p>
+        <h2>Fiddle-leaf fig</h2>
+        <div class="stats">
+          <div class="stat"><span>Water</span><strong>7–10 days</strong></div>
+          <div class="stat"><span>Light</span><strong>Bright indirect</strong></div>
+          <div class="stat"><span>Humidity</span><strong>40–60%</strong></div>
+          <div class="stat"><span>Temp</span><strong>18–24°C</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="note">Subject is cut out, scaled past the grid, and allowed to overlap the large serif headline. Secondary stats sit in a frosted panel so the composition stays readable.</p>
+  <script>
+    const stage = document.getElementById("stage");
+    const btnB = document.getElementById("btn-before");
+    const btnA = document.getElementById("btn-after");
+    btnB.addEventListener("click", () => { stage.classList.add("show-before"); btnB.classList.add("active"); btnA.classList.remove("active"); });
+    btnA.addEventListener("click", () => { stage.classList.remove("show-before"); btnA.classList.add("active"); btnB.classList.remove("active"); });
+  </script>
+</body>
+</html>
