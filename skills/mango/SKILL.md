@@ -31,7 +31,7 @@ The skill supplies **method + discipline**. It never supplies a visual template.
    - 5+ constraints derived from the real domain
    - Hero / primary object or moment (where budget concentrates)
    - Type roles
-   - One accent + neutral strategy
+   - Color strategy: mood-setting base pair + one memorable accent (the first two set the mood; the accent gives something to remember)
 2. Never ship the same layout, palette, or type system across unrelated briefs.
 3. Measure what matters: headline fit, overflow, contrast, focus order, console cleanliness, interaction states.
 4. Reduced motion and keyboard/touch are first-class.
@@ -40,7 +40,7 @@ The skill supplies **method + discipline**. It never supplies a visual template.
 ## Craft ceiling
 
 Domain-native does **not** mean static or low-ambition.  
-It means the language belongs to the industry while operating at the level of tight typography, considered imagery/motion when appropriate, one or two expensive-feeling specific moments, designed interaction details, and overall coherence that suggests aligned specialists.
+It means the language belongs to the industry while operating at the level of tight typography, considered imagery/motion when appropriate, one or two expensive-feeling specific moments, designed interaction details, living section geometries (not boring rectangular stacks), and overall coherence that suggests aligned specialists.
 
 If the result is correct for the domain but still feels cheap or under-designed, raise the ceiling. Modern component libraries can raise the craft ceiling; they must never replace the domain language.
 
@@ -59,7 +59,7 @@ Produce the Direction card. Reject leftover “premium dark gold” or previous-
 - Components → `references/components-and-implementation.md`
 
 **3. Structure & hierarchy**  
-Information architecture first. One clear primary action per major view. Layout serves the domain’s content model while remaining high-end.
+Information architecture first. One clear primary action per major view. Layout serves the domain’s content model while remaining high-end. Prefer organic, overlapping, staggered, or asymmetric section geometries over static equal-height stacks when the domain supports elevated presence (see `references/composition.md`).
 
 **4. Interaction & motion** → `references/motion-and-interaction.md`
 
@@ -90,8 +90,9 @@ Subtract decorative filler. Spend budget on what only this product can own.
 
 - `references/anti-slop.md` — full tell list, process, industry recognition test
 - `references/art-direction.md` — domain-native direction method
-- `references/color.md` — OKLCH ramps, complementary accent, gradient budget
+- `references/color.md` — OKLCH ramps, mood pair + memorable accent, gradient budget
 - `references/tokens-and-surfaces.md` — neutral ramps, accent rules
+- `references/composition.md` — region grammar + anti-boring section geometries
 - `references/visuals-and-moments.md` — product-owned visuals, rich moments
 - `references/components-and-implementation.md` — flexible implementation guidance
 - `references/motion-and-interaction.md` — motion and state quality
