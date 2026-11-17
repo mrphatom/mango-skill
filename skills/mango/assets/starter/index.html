@@ -1,33 +1,38 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{SITE_TITLE}}</title>
-<meta name="description" content="{{SITE_DESCRIPTION}}">
-<meta name="theme-color" content="{{BG}}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@500;700;800;900&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/main.css">
-<!-- CDN pins verified reachable 2026-11-16 — swap deliberately, not silently -->
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-<script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{SITE_TITLE}}</title>
+  <meta name="description" content="{{SITE_DESCRIPTION}}">
+  <meta name="theme-color" content="{{THEME_COLOR}}">
+  <!--
+    DISPOSABLE SCAFFOLD ONLY.
+    Do not treat this file as a design template.
+    Derive structure, type, color, and motion from the Direction card
+    and references/composition.md + references/color.md.
+    Replace or delete anything that does not serve the current artifact.
+  -->
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-<canvas id="webgl" aria-hidden="true"></canvas>
-<header class="shell-masthead">{{BRAND}}</header>
-<main>
-  <section class="shell-cover" id="top">
-    <h1 class="shell-display">{{HEADLINE}}</h1>
-    <p class="shell-dek">{{DEK}}</p>
-  </section>
-  <!-- Sections land here; each gets one job. See references/composition.md -->
-</main>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="js/main.js"></script>
-<script type="module" src="js/scene.js"></script>
+  <header>
+    <!-- Brand / navigation derived from the artifact -->
+  </header>
+
+  <main>
+    <!--
+      Sections are not predefined.
+      Build the region grammar from the Direction card.
+      See references/composition.md
+    -->
+  </main>
+
+  <footer>
+    <!-- Footer content derived from the artifact -->
+  </footer>
+
+  <script src="js/main.js"></script>
+  <!-- Add motion / 3D / interaction libraries only when the Direction card justifies them -->
 </body>
 </html>
