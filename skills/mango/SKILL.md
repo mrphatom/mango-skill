@@ -75,6 +75,13 @@ Subtract decorative filler. Spend budget on what only this product can own.
 
 **9. Verify** → `references/verification.md`
 
+## Starter note
+
+`assets/starter/` is a **purely neutral technical scaffold**.  
+It contains no fonts, no color system, no section structure, no 3D, and no motion libraries.  
+It exists only to give a clean HTML/CSS baseline.  
+**Never treat it as a design template.** Replace every token and derive all structure from the Direction card.
+
 ## Hard stops
 
 - Do not reuse previous mango / AURELIA visual systems on new domains.
@@ -85,6 +92,7 @@ Subtract decorative filler. Spend budget on what only this product can own.
 - Do not ignore empty/error/loading states on data-driven views.
 - Do not ship security-sensitive features without boundary thinking.
 - Do not override an explicit user stack or styling preference.
+- Do not ship the starter files unmodified.
 
 ## Resources
 
@@ -99,3 +107,4 @@ Subtract decorative filler. Spend budget on what only this product can own.
 - `references/states-and-copy.md` — empty/error/loading + writing
 - `references/security-when-app.md` — threat model and hardening triggers
 - `references/verification.md` — definition of done
+- `assets/starter/` — neutral technical scaffold only (no visual identity)
