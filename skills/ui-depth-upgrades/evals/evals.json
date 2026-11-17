@@ -1,0 +1,41 @@
+{
+  "skill_name": "ui-depth-upgrades",
+  "evals": [
+    {
+      "id": 1,
+      "name": "boxed-photo-boring",
+      "prompt": "My sneaker detail screen is a square photo of the shoe in a rounded box, a centred 20px title, and a price row. It looks like every template. Fix it and give me CSS.",
+      "expected": "Diagnoses boring layout; applies Move 1 (cutout, oversize 120-180%, bleed, overlap headline 10-30%, z-order, shadow); gives CSS; notes contrast/tap targets."
+    },
+    {
+      "id": 2,
+      "name": "flat-dashboard-fitness",
+      "prompt": "The workout screen in my fitness app is dark grey with white cards. It feels lifeless. How do I make it feel alive without hurting readability?",
+      "expected": "Diagnoses flat; Move 2 with layer model, state-driven scene, glass panels with fallbacks, scrim, contrast verified on worst region, reduce transparency/motion."
+    },
+    {
+      "id": 3,
+      "name": "generic-podcast",
+      "prompt": "Everything in my podcast app looks like default Material. Give me a design direction and tokens that make it feel unique.",
+      "expected": "Diagnoses generic; names one motif; palette from artwork; applies to crop, lettering, controls, palette; tokens; keeps 48dp targets and affordances."
+    },
+    {
+      "id": 4,
+      "name": "banking-restraint",
+      "prompt": "Our banking overview screen looks boring. Make it pop with big cutouts and a scene background.",
+      "expected": "Pushes back: data-dense task screen; recommends light Move 3 only (palette, type, radii, controls); explains why oversized cutouts and scenes would hurt scanning."
+    },
+    {
+      "id": 5,
+      "name": "video-recreate",
+      "prompt": "Based on that 3-tip UI video, redo my weather app: flat blue background, small icon, white cards.",
+      "expected": "Applies Move 2 as in the weather example: scene background, oversized translucent numeral, frosted panels, scrim, contrast check, fallbacks."
+    },
+    {
+      "id": 6,
+      "name": "scallop-script",
+      "prompt": "Make me a scalloped circular mask for album covers with 18 bumps that works responsively in CSS.",
+      "expected": "Uses scripts/scalloped_mask.py --scallops 18 --format clip (objectBoundingBox clipPath) and shows CSS usage."
+    }
+  ]
+}
