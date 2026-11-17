@@ -1,16 +1,64 @@
-/* BASELINE RESET — neutral. mango MUST replace the tokens and type system per brief.
-   Never ship this file unmodified. Placeholder props are labeled TBD-BY-ART-DIRECTION. */
+/*
+  DISPOSABLE SCAFFOLD ONLY.
+  This is a neutral reset. It must not influence the final visual system.
+
+  Before shipping:
+  1. Replace every custom property with values from the Direction card.
+  2. Define type roles (display / body / mono) from references/typography.md.
+  3. Never leave the placeholder tokens or this comment block in production.
+*/
+
 :root {
-  --bg: #f2efe6;          /* TBD-BY-ART-DIRECTION */
-  --ink: #131310;
-  --accent: #e8442e;
-  --display: "Archivo", sans-serif;
-  --serif: "Newsreader", serif;
-  --mono: "Spline Sans Mono", monospace;
+  /* TBD-BY-ART-DIRECTION — replace entirely */
+  --paper: #ffffff;
+  --ink: #111111;
+  --accent: #0000ff;
+
+  --font-display: system-ui, sans-serif;
+  --font-body: system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
 }
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { overflow-x: hidden; background: var(--bg); }
-body { overflow-x: hidden; background: var(--bg); color: var(--ink); font-family: var(--serif); }
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-#webgl { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none; }
-main { position: relative; z-index: 1; }
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100dvh;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Reduced motion is first-class */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
