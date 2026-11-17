@@ -42,7 +42,7 @@ The skill supplies **method + discipline**. It never supplies a visual template.
 Domain-native does **not** mean static or low-ambition.  
 It means the language belongs to the industry while operating at the level of tight typography, considered imagery/motion when appropriate, one or two expensive-feeling specific moments, designed interaction details, and overall coherence that suggests aligned specialists.
 
-If the result is correct for the domain but still feels cheap or under-designed, raise the ceiling.
+If the result is correct for the domain but still feels cheap or under-designed, raise the ceiling. Modern component libraries can raise the craft ceiling; they must never replace the domain language.
 
 ## Workflow
 
@@ -53,7 +53,7 @@ Read domain, product, existing brand/site, must-have content. Honor any provided
 Produce the Direction card. Reject leftover “premium dark gold” or previous-brief DNA. Decide where the craft budget goes.
 
 **2. Foundations**  
-- Color & surfaces → `references/tokens-and-surfaces.md`
+- Color & surfaces → `references/tokens-and-surfaces.md` + `references/color.md`
 - Type: three roles max, measured fit
 - Spacing: consistent professional density
 - Components → `references/components-and-implementation.md`
@@ -81,6 +81,7 @@ Subtract decorative filler. Spend budget on what only this product can own.
 - Do not use “domain-native” as an excuse for low-ambition design.
 - Do not claim done without anti-slop audit and basic verification.
 - Do not invent a new component library when the project already has one.
+- Do not let a component library’s default aesthetic become the product’s visual language.
 - Do not ignore empty/error/loading states on data-driven views.
 - Do not ship security-sensitive features without boundary thinking.
 - Do not override an explicit user stack or styling preference.
@@ -89,6 +90,7 @@ Subtract decorative filler. Spend budget on what only this product can own.
 
 - `references/anti-slop.md` — full tell list, process, industry recognition test
 - `references/art-direction.md` — domain-native direction method
+- `references/color.md` — OKLCH ramps, complementary accent, gradient budget
 - `references/tokens-and-surfaces.md` — neutral ramps, accent rules
 - `references/visuals-and-moments.md` — product-owned visuals, rich moments
 - `references/components-and-implementation.md` — flexible implementation guidance
