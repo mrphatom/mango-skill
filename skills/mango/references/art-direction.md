@@ -25,8 +25,8 @@ Extract 5–12 concrete constraints from that artifact. These become the design 
 2. Constraints (5+)
 3. Primary object or moment (where budget and craft concentrate)
 4. Type roles
-5. Accent + neutral strategy  
-   (Prefer a single complementary accent — opposite side of the wheel from the base — when the neutrals feel cold or washed. See `color.md`.)
+5. Color strategy: **mood-setting base pair + one memorable accent**  
+   (The first two colors set the mood; the accent gives the viewer something to remember. Prefer a complementary or high-energy accent opposite the base temperature. See `color.md`.)
 
 ## Step 4 — Craft target
 Within the domain constraints, aim for:
@@ -35,6 +35,7 @@ Within the domain constraints, aim for:
 - One or two high-craft moments that feel expensive and specific
 - Interaction details that feel designed (timing, state quality, material feel)
 - Overall coherence that suggests aligned specialists
+- Compositional ambition: reject boring static rectangular stacks when the domain can support organic, overlapping, staggered, or asymmetric section geometries (see `composition.md`)
 
 Domain-native is not an excuse for low ambition. Modern component libraries can supply the craft ceiling (motion quality, shader technique, type energy) but must never supply the visual identity.
 
@@ -48,5 +49,6 @@ Examples of the *method*:
 - Empty screen + tactile / texture language → presence
 - Predictable SaaS + a specific era or cultural graphic system → character
 - Cold / washed palette + complementary accent (opposite wheel) → hierarchy and energy
+- Static rectangular sections + organic / staggered / overlapping geometry → living hierarchy
 
 After mixing, re-run the industry recognition test. The result must still belong to the domain.
