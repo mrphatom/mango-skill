@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Move 2 — Scene background + layers</title>
+<style>
+  :root { --ink: #f5f8ff; --muted: #b8c7e0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, sans-serif; background: #0a1220; color: var(--ink); min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 2rem 1rem; }
+  h1 { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; }
+  .toggle { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; }
+  .toggle button { background: transparent; border: 1px solid var(--muted); color: var(--ink); padding: 0.35rem 0.9rem; border-radius: 999px; cursor: pointer; font-size: 0.8rem; }
+  .toggle button.active { background: var(--ink); color: #0a1220; }
+  .stage { width: min(390px, 100%); aspect-ratio: 9/16; border-radius: 28px; overflow: hidden; position: relative; box-shadow: 0 24px 48px rgba(0,0,0,0.5); }
+  .before { display: none; height: 100%; background: #1a4a8a; padding: 1.5rem; flex-direction: column; }
+  .stage.show-before .before { display: flex; }
+  .stage.show-before .after { display: none; }
+  .before .icon { width: 64px; height: 64px; border-radius: 50%; background: #3a7bd5; margin: 2rem auto 1rem; }
+  .before h2 { text-align: center; font-size: 3rem; font-weight: 300; }
+  .before .loc { text-align: center; color: #a0c4ff; margin-bottom: 2rem; }
+  .before .card { background: #fff; color: #0a1220; border-radius: 12px; padding: 0.9rem; margin-top: auto; }
+  .after { position: relative; height: 100%; background: linear-gradient(180deg, #1a3a6e 0%, #4a7ab5 40%, #8eb8e0 70%, #c5dcf0 100%); }
+  .after::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 30%, rgba(10,20,40,0.55) 100%); }
+  .after .content { position: relative; z-index: 2; height: 100%; padding: 2.5rem 1.4rem 1.5rem; display: flex; flex-direction: column; }
+  .after .loc { font-size: 0.9rem; opacity: 0.9; }
+  .after .temp { font-size: 6rem; font-weight: 200; line-height: 1; letter-spacing: -0.04em; margin: 0.5rem 0; text-shadow: 0 4px 24px rgba(0,0,0,0.25); }
+  .after .cond { font-size: 1.1rem; margin-bottom: auto; }
+  .after .panel { background: rgba(255,255,255,0.18); backdrop-filter: blur(16px); border-radius: 18px; padding: 1rem; border: 1px solid rgba(255,255,255,0.2); }
+  .after .hours { display: flex; justify-content: space-between; font-size: 0.8rem; }
+  .note { margin-top: 1.25rem; max-width: 390px; font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
+</style>
+</head>
+<body>
+  <h1>Move 2 · Scene + layers</h1>
+  <div class="toggle">
+    <button type="button" id="btn-before">Before</button>
+    <button type="button" id="btn-after" class="active">After</button>
+  </div>
+  <div class="stage" id="stage">
+    <div class="before">
+      <div class="icon"></div>
+      <h2>22°</h2>
+      <p class="loc">Lagos · Partly cloudy</p>
+      <div class="card">Humidity 68% · Wind 12 km/h</div>
+    </div>
+    <div class="after">
+      <div class="content">
+        <p class="loc">Lagos</p>
+        <p class="temp">22°</p>
+        <p class="cond">Partly cloudy</p>
+        <div class="panel">
+          <div class="hours">
+            <span>Now<br><strong>22°</strong></span>
+            <span>2 PM<br><strong>23°</strong></span>
+            <span>3 PM<br><strong>24°</strong></span>
+            <span>4 PM<br><strong>23°</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="note">Full-bleed scene + soft scrim + oversized light numeral + frosted panel. Contrast is protected by the gradient scrim.</p>
+  <script>
+    const stage = document.getElementById("stage");
+    document.getElementById("btn-before").onclick = () => { stage.classList.add("show-before"); document.getElementById("btn-before").classList.add("active"); document.getElementById("btn-after").classList.remove("active"); };
+    document.getElementById("btn-after").onclick = () => { stage.classList.remove("show-before"); document.getElementById("btn-after").classList.add("active"); document.getElementById("btn-before").classList.remove("active"); };
+  </script>
+</body>
+</html>
