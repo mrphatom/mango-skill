@@ -1,26 +1,57 @@
 # Anti-slop
 
-Slop is the compound result of many median choices. Fixing one element rarely works. Walk the whole surface in order: subtract first, then restyle, then add one intentional rich moment.
+Slop is the compound result of many median choices made at once. Fixing one element rarely works. Walk the whole surface in order: audit → subtract → restyle → add one intentional rich moment.
 
-## Common tells (reject on sight)
-- Purple → blue or teal → lime gradients used as atmosphere
-- Glassmorphism cards + soft glow orbs
-- Gradient-clipped or rainbow text
-- Emoji / sparkle / ✨ icons and pill badges as decoration
-- Three identical feature cards in a row
-- Centered hero, vague aspirational headline, dual CTA
+## Signs of slop (audit these)
+
+### Surfaces and color
+- Purple→blue, violet→pink, or teal→lime gradients on backgrounds, cards, buttons, or active nav
+- Gradient text in headings, numbers, or logo
+- Colored glows (`shadow-[0_0_20px_…]`, glowing pills, drop-shadow on emoji)
+- Radial color washes or blurred blobs with no reason in the product’s world
+- Neon or high-contrast colored borders
+- Many near-identical tints of the same hue for text
+- Everything highlighted so nothing stands out
+- Glass cards with white inner highlight + colored shadow over a flat background
+
+### Type
+- Headings at weight 800–900 when the domain doesn’t need it
+- Uppercase labels with wide tracking (`NAVIGATION`, `PAID THIS MONTH`)
+- Too many sizes and weights on one screen
+- Mixed number formats or non-tabular figures
+- Negative letter-spacing on small text
+- Italic used only for emphasis instead of color/weight
+
+### Icons
+- Emoji as nav icons, status, or decoration (🏠 🚀 💰 ✨)
+- Emoji inside pills and counts
+- Icons in many sizes and colors
+- Icons nudged off the column
+- Sparkle ✨ for anything AI-related
+
+### Spacing & layout
+- Arbitrary values (`mt-[13px]`, `h-[31px]`) instead of a consistent scale
+- Rows in one list with different heights or gaps
+- Groups closer to neighbours than to their own content
+- Generic three-column identical feature cards
+- Centered hero + vague headline + dual CTA as the default structure
+
+### Content & proof
 - Fake metrics or “trusted by” logos with no substance
-- Default Inter/Roboto/system stack when the domain needs character
-- Uneven spacing, floating elements, and “AI landing page” airiness
-- Any visual language carried from a previous unrelated brief (especially previous mango/AURELIA output)
+- Greeting headlines that could belong to any product
+- Empty or decorative social proof
+
+### Carry-over
+- Any visual DNA from a previous unrelated brief (especially previous mango/AURELIA output)
 
 ## Process
-1. Screenshot the real rendered screen (desktop + mobile if relevant).
-2. List every tell with its location.
-3. Write or refresh the Direction card from the actual domain.
-4. Delete or replace the tells before adding new styling.
-5. Spend the visual budget on **one moment** only this product could have.
-6. Run the industry recognition test: would a professional who works in this domain immediately accept the page as belonging to their world?
+1. Render or screenshot the real screen at real size (and mobile if relevant).
+2. List every sign with its location.
+3. Refresh the Direction card from the actual domain.
+4. Delete or replace the tells **before** adding new styling.
+5. Spend the visual budget on one (or a few tightly related) moments only this product could own.
+6. Run the industry recognition test.
 
 ## Industry recognition test (mandatory)
-If a real-estate agent, logistics operator, restaurant owner, or SaaS PM would look at the page and think “this was made by someone who doesn’t work in our world,” the direction has failed. Re-derive.
+Would a professional who works in this exact domain immediately accept the page as belonging to their world **and** respect the level of execution?  
+If it looks correct for the domain but still feels cheap, safe, or under-designed, the craft ceiling is too low. Raise it.
