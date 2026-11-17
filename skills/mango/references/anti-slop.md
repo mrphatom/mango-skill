@@ -13,6 +13,7 @@ Slop is the compound result of many median choices made at once. Fixing one elem
 - Many near-identical tints of the same hue for text
 - Everything highlighted so nothing stands out
 - Glass cards with white inner highlight + colored shadow over a flat background
+- Cold or washed palette with no energetic accent (mood pair present but no memorable third note)
 
 ### Type
 - Headings at weight 800–900 when the domain doesn’t need it
@@ -35,6 +36,8 @@ Slop is the compound result of many median choices made at once. Fixing one elem
 - Groups closer to neighbours than to their own content
 - Generic three-column identical feature cards
 - Centered hero + vague headline + dual CTA as the default structure
+- Stacks of equal-height rectangular sections with identical padding and no hierarchy of scale or geometry
+- Rigid grids when the domain and craft target can support overlapping, staggered, curved, or asymmetric section geometries
 
 ### Content & proof
 - Fake metrics or “trusted by” logos with no substance
