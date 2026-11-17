@@ -20,6 +20,22 @@ Layout is not chosen from a pattern library; it is read off the artifact named i
 - Full-bleed dark band used exactly once (ledger or order slip); single accent equals single ask.
 - Horizontal strips: always `overflow-x: auto` below 760px; above, pin + scrub.
 
+## Section geometry — stop designing boring sections
+High-budget work rarely lives in a stack of equal-height rectangular cards with identical padding.
+
+When the domain and craft target support elevated presence, reject static, predictable section stacks. Prefer living geometries that create hierarchy, movement, and ownership:
+
+- **Overlapping / staggered cards** — cards or media panels that overlap, cascade, or sit at slight angles rather than aligning to a rigid grid.
+- **Organic side panels** — curved or wavy flanking panels that frame a central card or media object instead of straight columns.
+- **Diagonal or circular arrangements** — content cards or images arranged along a diagonal, arc, or loose orbit rather than rows and columns.
+- **Floating / layered compositions** — elements that feel placed in space (depth, scale contrast, soft shadows) instead of locked to a baseline grid.
+- **Asymmetric focal layouts** — one dominant media or title moment with supporting elements orbiting it, rather than three equal feature cards.
+- **Tunnel / perspective sequences** — content cards that recede or advance in depth (useful for product showcases, portfolios, or narrative sequences).
+
+These are not decorative tricks. They are tools for hierarchy and energy. Use them only when they serve the content model and pass the industry recognition test. A logistics operations dashboard should stay disciplined; a brand, product, or portfolio site can afford (and often needs) more compositional ambition.
+
+Never default to the generic three-column feature grid or centered hero + dual CTA stack. Derive the geometry from the artifact and the craft ceiling of the brief.
+
 ## Type composition
 - Headline set to measured fit; per-line `clamp()` when line lengths differ > 15% (see typography.md).
 - Section titles: one line of display + one line of italic optical-serif continuation (`em`). The italic is not decoration — it is the second voice of the artifact.
