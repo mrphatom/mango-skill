@@ -25,17 +25,18 @@ Extract 5–12 concrete constraints from that artifact. These become the design 
 2. Constraints (5+)
 3. Primary object or moment (where budget and craft concentrate)
 4. Type roles
-5. Accent + neutral strategy
+5. Accent + neutral strategy  
+   (Prefer a single complementary accent — opposite side of the wheel from the base — when the neutrals feel cold or washed. See `color.md`.)
 
 ## Step 4 — Craft target
 Within the domain constraints, aim for:
 - Tight, intentional typography and spacing
 - Considered photography / illustration / 3D / motion when the domain supports it
 - One or two high-craft moments that feel expensive and specific
-- Interaction details that feel designed
+- Interaction details that feel designed (timing, state quality, material feel)
 - Overall coherence that suggests aligned specialists
 
-Domain-native is not an excuse for low ambition.
+Domain-native is not an excuse for low ambition. Modern component libraries can supply the craft ceiling (motion quality, shader technique, type energy) but must never supply the visual identity.
 
 ## Reference mixing (optional accelerator)
 When the first pass still feels safe or under-designed, deliberately collide the product with a strong graphic or cultural reference, then resolve the collision into one coherent direction. The reference is a catalyst, not a costume.
@@ -46,5 +47,6 @@ Examples of the *method*:
 - Cluttered interface + bold typographic maximalism → one dominant type system
 - Empty screen + tactile / texture language → presence
 - Predictable SaaS + a specific era or cultural graphic system → character
+- Cold / washed palette + complementary accent (opposite wheel) → hierarchy and energy
 
 After mixing, re-run the industry recognition test. The result must still belong to the domain.
